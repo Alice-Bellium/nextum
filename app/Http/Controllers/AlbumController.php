@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AlbumRequest;
 use App\Models\Album;
 use App\Models\Genre;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AlbumController extends Controller
 {
@@ -95,5 +96,17 @@ class AlbumController extends Controller
     {
         $album->delete();
         return redirect()->route('index')->with('success', 'Альбом удален');
+    }
+
+    /**
+     * Export the album to PDF.
+     */
+    public function export(Album $album)
+    {
+        $data = $album->toArray();
+        $data['genres'] = $album->genres()->get()->toArray();
+
+        $pdf = PDF::loadView('albums.pdf', compact('data'));
+        return $pdf->download('albums-list.pdf');
     }
 }

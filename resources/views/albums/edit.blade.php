@@ -40,7 +40,8 @@
                         </div>
                     </div>
                     <div class="mb-3 mt-3">
-                        <a class="btn btn-lg btn-outline-primary" role="button" href="#">Экспорт в PDF</a>
+                        <a class="btn btn-lg btn-outline-primary" role="button"
+                           href="{{ route('albums.export', $album) }}">Экспорт в PDF</a>
                         <button class="btn btn-lg btn-outline-primary" role="button" type="submit">Сохранить</button>
                     </div>
                 </form>
