@@ -22,3 +22,7 @@
 `App\Models\Album::factory()->count(150)->create();`
 `./vendor/bin/sail tinker` и
  `App\Models\Genre::factory()->count(50)->create();`
+
+ ![Albums](https://github.com/Alice-Bellium/nextum/blob/main/albums.png)
+ ![Genres](https://github.com/Alice-Bellium/nextum/blob/main/genres.png)
+ ![Add Genre](https://github.com/Alice-Bellium/nextum/blob/main/add_genre.png)
